@@ -1,0 +1,7 @@
+run this
+curl -O https://raw.githubusercontent.com/HendrikJS/HendrikJS.github.io/master/konf4.sh 
+then bash konf4.sh
+
+These are WP credentials and db name:
+CREATE DATABASE wordpress;
+GRANT ALL ON wordpress.* TO 'wordpress'@'localhost' IDENTIFIED BY 'wordpress';
