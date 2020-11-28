@@ -1,5 +1,6 @@
 #!/bin/bash
 clear
+START=$(date +%s)
 echo "============================================"
 echo "		uuendame systeemi(1/7)			 	  "
 echo "============================================"
@@ -64,6 +65,7 @@ systemctl enable mariadb
 echo "============================================"
 echo "		mariadb installitud (4/7)           "
 echo "============================================"
+date
 #systemctl status mariadb
 #
 # Author: Bert Van Vreckem <bert.vanvreckem@gmail.com>
@@ -116,7 +118,6 @@ echo "============================================"
 echo "============================================"
 echo "      Installime Wordpressi (7/7)	          "
 echo "============================================"
-
 curl -O https://wordpress.org/latest.tar.gz
 set echo off
 tar -zxvf latest.tar.gz
@@ -156,3 +157,9 @@ set echo on
 echo "============================================"
 echo "				Tehtud!						  "
 echo "============================================"
+ls -R /etc > /tmp/x
+rm -f /tmp/x
+# your logic ends here
+END=$(date +%s)
+DIFF=$(( $END - $START ))
+echo "It took $DIFF seconds"
