@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-START=$(date +%s)
+start=$(date +%s.%N); \
 echo "============================================"
 echo "		uuendame systeemi(1/7)			 	  "
 echo "============================================"
@@ -160,6 +160,5 @@ echo "============================================"
 ls -R /etc > /tmp/x
 rm -f /tmp/x
 # your logic ends here
-END=$(date +%s)
-DIFF=$(( $END - $START ))
-echo "It took $DIFF seconds"
+dur=$(echo "$(date +%s.%N) - $start" | bc); \
+printf "Execution time: %.6f seconds\n" $dur
